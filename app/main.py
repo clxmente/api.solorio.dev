@@ -1,6 +1,3 @@
-from email import message
-from ensurepip import version
-from sys import api_version
 from fastapi import FastAPI, Request
 from starlette.responses import JSONResponse
 from app.routers.exceptions import DoesNotExist
