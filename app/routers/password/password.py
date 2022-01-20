@@ -1,7 +1,5 @@
-from http.client import responses
 from typing import Optional
-from fastapi import APIRouter, Request
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter
 from pydantic import BaseModel
 
 from app.routers.password.password_funcs import gen_password
