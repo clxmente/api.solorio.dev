@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from starlette.responses import JSONResponse
+from starlette.responses import JSONResponse, RedirectResponse
 from app.routers.exceptions import DoesNotExist
 
 # import the routers from other modules
@@ -22,6 +22,10 @@ async def player_dne(request: Request, exc: DoesNotExist):
         }
     )
 
-@app.get("/")
-async def root():
+@app.get("/", response_class=RedirectResponse, status_code=302)
+async def redirect_to_docs():
+    return RedirectResponse("/docs")
+
+@app.get("/ping")
+async def ping():
     return {"messsage": "hello!"}
