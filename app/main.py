@@ -56,7 +56,7 @@ async def no_sets_selected(request: Request, exc: ExcludedAllSets):
         }
     )
 
-@app.get("/", response_class=RedirectResponse, status_code=302)
+@app.get("/", response_class=RedirectResponse)
 async def redirect_to_docs():
     return RedirectResponse("/docs")
 
